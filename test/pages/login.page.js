@@ -1,20 +1,21 @@
+let userName = "//input[@id='user-name']"
+let password = "//input[@id='password']"
+let btnLogin = "//input[@id='login-button']"
+
 class LoginPage {
-    get username(){
-        return $("//input[@id='user-name']")
+    get username() {
+        return $(userName)
     }
-    get password(){
-        return $("//input[@id='password']")
+    get password() {
+        return $(password)
     }
-    get loginButton(){
-        return  $("//input[@id='login-button']")
+    get loginButton() {
+        return $(btnLogin)
     }
-    get messageBox(){
-        return $('#flash')
-    }
- async login(username, password){
+    async login(username, password) {
         await this.username.setValue(username)
         await this.password.setValue(password)
         await this.loginButton.click()
     }
- }
- export default new LoginPage();
+}
+export default new LoginPage();
